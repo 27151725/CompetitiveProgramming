@@ -12,7 +12,7 @@ Execution Time:0.69
 */
 
 // function printing all leaders of array of positive integer
-void printLeaders(int values[], int size) {
+void print_leaders(int values[], int size) {
     int max = values[size-1];
     std::vector<int> leaders;
     leaders.reserve(size);
@@ -41,7 +41,7 @@ int main() {
 		    std::cin>>value;
 		    values[j]=value;
 		}
-		printLeaders(values, size);
+		print_leaders(values, size);
     } 
 	return 0;
 }
