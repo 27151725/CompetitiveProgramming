@@ -6,6 +6,10 @@ using namespace std;
 
 // exercise at https://practice.geeksforgeeks.org/problems/leaders-in-an-array/0
 // the output of the third test case is incorrect
+/*
+Correct Answer.Correct Answer
+Execution Time:0.87
+*/
 
 // function printing all leaders of array of positive integer
 void printLeaders(int values[], int size) {
