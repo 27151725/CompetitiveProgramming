@@ -27,7 +27,7 @@ void print_leaders(int values[], int size)
     for (auto it = leaders.rbegin(); it != leaders.rend(); it++) {
         std::cout << *it << " ";
     }
-    std::cout << endl;
+    std::cout << std::endl;
 }
 
 int main()
