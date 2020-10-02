@@ -8,14 +8,14 @@ using namespace std;
 // the output of the third test case is incorrect
 /*
 Correct Answer.Correct Answer
-Execution Time:0.87
+Execution Time:0.69
 */
 
 // function printing all leaders of array of positive integer
 void printLeaders(int values[], int size) {
-    int max = 0;
-    vector<int> leaders;
-    max = values[size-1];
+    int max = values[size-1];
+    std::vector<int> leaders;
+    leaders.reserve(size);
     leaders.push_back(values[size-1]);
     for(int i=size-2; i>=0; i--){
        if(values[i]>=max){
@@ -24,9 +24,9 @@ void printLeaders(int values[], int size) {
        }
     }
     for (auto it = leaders.rbegin(); it != leaders.rend(); it++) {
-        cout << *it << " ";
+        std::cout << *it << " ";
     }
-    cout<<endl;
+    std::cout<<endl;
 }
 
 int main() {
