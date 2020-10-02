@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// problem: http://practice.geeksforgeeks.org/problems/kadanes-algorithm/0
+
 void print_kadane(int values[], int size)
 {
     int max = values[0];
