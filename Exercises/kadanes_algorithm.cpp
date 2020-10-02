@@ -18,6 +18,9 @@ void print_kadane(int values[], int size)
             max = sum;
         }
         i++;
+        if (sum < 0) {
+            sum = 0;
+        }
     }
     std::cout << max << std::endl;
 }
