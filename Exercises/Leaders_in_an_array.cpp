@@ -5,6 +5,7 @@
 using namespace std;
 
 // function printing all leaders of array of positive integer
+// the output of the third test case is incorrect
 void printLeaders(int values[], int size) {
     int max = 0;
     vector<int> leaders;
@@ -17,8 +18,9 @@ void printLeaders(int values[], int size) {
            leaders.push_back(max);
        }
     }
-    for (std::vector<int>::const_iterator i = leaders.begin(); i != leaders.end(); ++i){
-        std::cout << *i << ' ';
+    
+    for (auto it = leaders.rbegin(); it != leaders.rend(); it++) {
+        cout << *it << " ";
     }
     cout<<endl;
 }
