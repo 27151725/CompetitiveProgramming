@@ -5,7 +5,7 @@ using namespace std;
 /* 
 the result of the subtraction between the sum of the first n natural numbers 
 (indexes of the array if all elements were present) and the sum of all elements 
-of the array is the missing element
+of the array is the missing number
 */
 int main()
 {
