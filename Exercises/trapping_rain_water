@@ -3,21 +3,28 @@
 using namespace std;
 
 // https://practice.geeksforgeeks.org/problems/trapping-rain-water/0
+
 void print_total_unit_water(int values[], int size)
 {
-    int i = 0;
+    int start = 0;
+    int end = size - 1;
     int total_unit_water = 0;
-    while (i<size-1){
-       int begin = values[i];
-       //int temp_sum = 0;
-       //int indexes = 0;
-       while (begin>=values[i+1] and i<size-1){
-           //temp_sum += values[i+1];
-           total_unit_water += begin-values[i+1];
-           //indexes++;
-           i++;
-       }
-       i++;
+    int level = 0;
+    while (start != end) {
+        if (values[start] <= values[end]) {
+            if (values[start] > level) {
+                level = values[start];
+            }
+            total_unit_water += (level - values[start]);
+            start++;
+        }
+        else {
+            if (values[end] > level) {
+                level = values[end];
+            }
+            total_unit_water += (level - values[end]);
+            end--;
+        }
     }
     std::cout << total_unit_water << std::endl;
 }
