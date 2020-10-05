@@ -16,12 +16,12 @@ int main()
         std::cin >> size;
         int value = 0;
         int value_sum = 0;
-        for (int j=1; j<size; j++) {
+        for (int j = 1; j < size; j++) {
             std::cin >> value;
             value_sum += value;
         }
-        int sum = size*(size+1)/2;
-        std::cout << sum-value_sum << std::endl;
+        int sum = size * (size + 1) / 2;
+        std::cout << sum - value_sum << std::endl;
     }
     return 0;
 }
