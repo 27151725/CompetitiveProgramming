@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// problem: http://practice.geeksforgeeks.org/problems/kadanes-algorithm/0
+
+void print_max_all_subarray(int values[], int size, int k)
+{
+    int maximum = 0;
+    int i;
+    for (i = 0; i < size; i++) {
+        maximum = max(maximum, values[i]);
+        if ((i + 1) % k == 0) {
+            for (int l = 0; l < k; l++) {
+                std::cout << maximum << " ";
+            }
+            maximum = 0;
+        }
+    }
+    if (i % k != 0) {
+        for (int l = 0; l < k; l++) {
+            std::cout << maximum << " ";
+        }
+    }
+    std::cout << std::endl;
+}
+
+int main()
+{
+    int num_test_cases = 0;
+    std::cin >> num_test_cases;
+    for (int i = 0; i < num_test_cases; i++) {
+        int size = 0; // size of i th test case
+        std::cin >> size;
+        int k = 0; // the length of the subarray
+        std::cin >> k;
+        int values[size]; // array of elements of i th test case
+        int value = 0;
+        for (int j = 0; j < size; j++) {
+            std::cin >> value;
+            values[j] = value;
+        }
+        print_max_all_subarray(values, size, k);
+    }
+    return 0;
+}
