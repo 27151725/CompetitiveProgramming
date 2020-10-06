@@ -2,25 +2,19 @@
 #include <string>
 using namespace std;
 
-// problem: http://practice.geeksforgeeks.org/problems/kadanes-algorithm/0
+// problem: https://practice.geeksforgeeks.org/problems/maximum-of-all-subarrays-of-size-k/0
 
 void print_max_all_subarray(int values[], int size, int k)
 {
     int maximum = 0;
     int i;
-    for (i = 0; i < size; i++) {
-        maximum = max(maximum, values[i]);
-        if ((i + 1) % k == 0) {
-            for (int l = 0; l < k; l++) {
-                std::cout << maximum << " ";
-            }
-            maximum = 0;
-        }
+    for (i = 0; i < k; i++){
+        maximum = max(maximum, values[i]); // the maximum of the first three elements
     }
-    if (i % k != 0) {
-        for (int l = 0; l < k; l++) {
-            std::cout << maximum << " ";
-        }
+    std::cout << maximum << " ";
+    for (i = k; i < size; i++){
+        maximum = max(maximum, values[i]);
+        std::cout << maximum << " "; // the maximum between the maximum and the i-th element
     }
     std::cout << std::endl;
 }
